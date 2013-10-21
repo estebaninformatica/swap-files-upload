@@ -1,0 +1,14 @@
+doctype html
+html lang="en"
+head
+	title== @title || "Swap files"
+	meta charset="utf-8"
+	link rel="stylesheet" href="/styles.scss"
+body
+	- if @flash
+	  = @flash
+	header
+	h1 Swap Files
+	== slim :nav
+	section
+	== yield

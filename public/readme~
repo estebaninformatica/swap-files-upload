@@ -1,0 +1,5 @@
+Init with ruby main.rb -o 0.0.0.0 for access to another pc.
+
+fedora:
+sudo iptables -A INPUT -p tcp --dport 4567 -j ACCEPT
+servce iptables restart 
