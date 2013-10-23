@@ -10,24 +10,24 @@ set :public_folder, File.join(File.dirname(__FILE__), 'public')
 set :files, File.join(settings.public_folder, 'files')
 
 get '/' do
-	slim :home
+  slim :home
 end
 
 get '/about' do
-	slim :about
+  slim :about
 end
 
 get '/contact' do
-	slim :contact
+  slim :contact
 end
 
 get '/upload' do
-	@files = Dir.entries(settings.files) - ['.', '..']
+  @files = Dir.entries(settings.files) - ['.', '..']
   slim :upload
 end
 
 not_found do
-	slim :not_found
+  slim :not_found
 end
 
 post '/upload' do
@@ -37,8 +37,8 @@ post '/upload' do
 
     File.open(File.join(settings.files, filename), 'wb') do |f|
       f.write file.read
-  	end
-		@flash = 'Upload successful'
+    end
+    @flash = 'Upload successful'
   else
     @flash = 'You have to choose a file'
   end
